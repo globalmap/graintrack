@@ -1,6 +1,6 @@
-import { useLocalStorage } from "../hooks/useLocaleStorage";
 import * as Switch from "@radix-ui/react-switch";
 import { useEffect } from "react";
+import { useLocalStorage } from "../hooks/useLocaleStorage/useLocaleStorage";
 
 const LIGHT_THEME = "light";
 const DARK_THEME = "dark";
@@ -27,8 +27,8 @@ function ThemeSwitch() {
         </label>
         <Switch.Root
           onCheckedChange={handleCheck}
-          checked={theme === "dark"}
-          className='cursor-pointer w-[42px] h-[25px] bg-blackA6 rounded-full relative shadow-[0_2px_10px] shadow-blackA4 focus:shadow-[0_0_0_2px] focus:shadow-black data-[state=checked]:bg-black outline-none '
+          checked={theme === DARK_THEME}
+          className='cursor-pointer w-[42px] h-[25px] bg-blackA6 rounded-full relative shadow-[0_2px_10px] shadow-blackA4 focus:shadow-[0_0_0_2px] focus:shadow-black data-[state=checked]:bg-black outline-none'
           id='theme-mode'
           style={{ WebkitTapHighlightColor: "rgba(0, 0, 0, 0)" }}
           aria-label='Toggle theme mode'>

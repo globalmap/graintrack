@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Form from "@radix-ui/react-form";
 import Button from "../shared/components/Button";
-import { useAuth } from "../core/hooks/useAuth";
+import { useAuth } from "../shared/hooks/useAuth/useAuth";
 import router from "../app/router";
 
 const Login: React.FC = () => {

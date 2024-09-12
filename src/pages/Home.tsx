@@ -1,9 +1,8 @@
-import React from "react";
-import { useAuth } from "../core/hooks/useAuth";
+import { useAuth } from "../shared/hooks/useAuth/useAuth";
 
 const Home: React.FC = () => {
   const { currentUser } = useAuth();
-  
+
   return (
     <div className='flex flex-col items-center justify-center'>
       <h1 className='text-4xl text-center m-6'>Hello World</h1>

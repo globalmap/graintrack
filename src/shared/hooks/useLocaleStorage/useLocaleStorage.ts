@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-export const useLocalStorage = (key: string, initialValue: string) => {
+export const useLocalStorage = <T>(key: string, initialValue: T) => {
   // Retrieve stored value from localStorage, or use the initial value if not present
-  const [storedValue, setStoredValue] = useState(() => {
+  const [storedValue, setStoredValue] = useState<T>(() => {
     try {
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
@@ -13,7 +13,7 @@ export const useLocalStorage = (key: string, initialValue: string) => {
   });
 
   // Save the value to localStorage whenever it changes
-  const setValue = (value: string) => {
+  const setValue = (value: T) => {
     try {
       setStoredValue(value);
       window.localStorage.setItem(key, JSON.stringify(value));
@@ -24,4 +24,3 @@ export const useLocalStorage = (key: string, initialValue: string) => {
 
   return [storedValue, setValue] as const;
 };
-
